@@ -16,10 +16,10 @@ head=""
 j=res[0]
 for i,header in enumerate(j.keys()):
     if(i<len(j)-2):
-        head+=header+', '
+        head+=header+','
     else:
         if(',' in header):
-            header='"'+header+'"'
+            header='\"'+header+'"'
         head+=header
         break
 
@@ -32,7 +32,7 @@ with open('jokes.csv','w') as file:
                 data+=str(val)+','
             else:
                 if(',' in val):
-                    val = '"'+val+'"'
+                    val = '\"'+val+'"'
                 data+=str(val)
                 break
         file.write(data+'\n')
